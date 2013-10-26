@@ -12,4 +12,8 @@ prereqs:
   sudo apt-get install python-setuptools
   sudo easy_install rpi.gpio
 
-
+setup:
+  RUN these to get motionsensor to run on startup:
+  sudo cp initd_motionsensor.sh /etc/init.d/
+  sudo update-rc.d initd_motionsensor.sh defaults
+  sudo /etc/init.d/initd_motionsensor.sh start
